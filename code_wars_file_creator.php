@@ -3,8 +3,12 @@
 
 // API GET REQUREST
 
-$ch = curl_init();
+if($argc < 2){
+    echo "ERROR ARG: ".basename(getcwd())." requires 1 and only 1 argument of challenge id\n";
+    return;
+}
 
+$ch = curl_init();
 $id = $argv[1];
 $url = "https://www.codewars.com/api/v1/code-challenges/" . $id;
 
