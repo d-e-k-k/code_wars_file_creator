@@ -10,7 +10,7 @@ This script works by making a GET request to the [code wars restAPI](https://dev
 
 #### Example
 ```bash
-script php 5277c8a221e209d3f6000b56
+scriptname php 5277c8a221e209d3f6000b56
 
 ```
 The script runs and either creates the file or tells you that it already exist and then opens the file in VScode.
