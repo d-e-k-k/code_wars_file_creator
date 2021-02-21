@@ -5,7 +5,8 @@
 
 $ch = curl_init();
 
-$url = "https://www.codewars.com/api/v1/code-challenges/54521e9ec8e60bc4de000d6c";
+$id = $argv[1];
+$url = "https://www.codewars.com/api/v1/code-challenges/" . $id;
 
 
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -46,3 +47,4 @@ if(!is_file($rankPath . DS . $dirName . DS . $fileName)){
     echo "File created at: " . $rankPath . DS . $dirName . $fileName . "\n";
 }else{
     echo '"' .$fileName. '" already exists at ' . $rankPath . DS . $dirName . "\n"; 
+}
