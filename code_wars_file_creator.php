@@ -3,13 +3,13 @@
 
 // API GET REQUREST
 
-if($argc < 2){
-    echo "ERROR ARG: ".basename(getcwd())." requires 1 and only 1 argument of challenge id\n";
+if($argc < 3){
+    echo "ERROR ARG: ".basename(getcwd())." requires two arguments, language by extension name and challenge id respectivly.\n";
     return;
 }
 
 $ch = curl_init();
-$id = $argv[1];
+$id = $argv[2];
 $url = "https://www.codewars.com/api/v1/code-challenges/" . $id;
 
 
@@ -29,6 +29,7 @@ curl_close($ch);
 
 define("DS", DIRECTORY_SEPARATOR);
 
+$langExt = $argv[1]; 
 $dirName = str_replace("-", "_", $decode->slug);
 $fileName = $dirName . ".php";
 $rank = abs($decode->rank->id);
@@ -52,3 +53,5 @@ if(!is_file($rankPath . DS . $dirName . DS . $fileName)){
 }else{
     echo '"' .$fileName. '" already exists at ' . $rankPath . DS . $dirName . "\n"; 
 }
+
+exec('code '. $rankPath . DS . $dirName . $fileName);
