@@ -49,10 +49,18 @@ if (!is_dir($rankPath)) {
 // }
 
 if (!is_file($rankPath . DS . $dirName . DS . $fileName)) {
-    // touch($rankPath . DS . $dirName . DS . $fileName);
+    touch($rankPath . DS . $dirName . DS . $fileName);
     echo "File created at: " . $rankPath . DS . $dirName . DS . $fileName . "\n";
 } else {
     echo '"' . $fileName . '" already exists at ' . $rankPath . DS . $dirName . "\n";
 }
 
-exec('code ' . $rankPath . DS . $dirName  . DS . $fileName);
+echo "Would you like to open this file?(y/n)\n";
+$handle = fopen('php://stdin', 'r');
+$line = fgets($handle);
+if (trim($line) == 'y') {
+    echo "Opening...\n";
+    exec('code ' . $rankPath . DS . $dirName  . DS . $fileName);
+} else {
+    echo "Exiting...\n";
+}
