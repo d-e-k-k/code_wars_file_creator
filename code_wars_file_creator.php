@@ -45,12 +45,13 @@ if (!is_dir($rankPath)) {
     mkdir($rankPath);
 }
 
-// if (!is_dir($rankPath . DS . $dirName)) {
-//     mkdir($rankPath . DS . $dirName);
-// }
+if (!is_dir($rankPath . DS . $dirName)) {
+    mkdir($rankPath . DS . $dirName);
+}
 
 if (!is_file($rankPath . DS . $dirName . DS . $fileName)) {
     touch($rankPath . DS . $dirName . DS . $fileName);
+
     echo "File created at: " . $rankPath . DS . $dirName . DS . $fileName . "\n";
 } else {
     echo '"' . $fileName . '" already exists at ' . $rankPath . DS . $dirName . "\n";
