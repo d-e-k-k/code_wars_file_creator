@@ -2,6 +2,8 @@
 
 ### *This README is not finish*
 
+![gif demo in terminal](./example.gif)
+
 ## Why I made this?
 I do coding challenges and like to keep track of all the completed challenges on my local machine. For every challenge, I need to check if I have done it and if not, make folders and files for it. This php script handles that for me.
 
