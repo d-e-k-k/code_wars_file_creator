@@ -34,6 +34,7 @@ $langExt = $argv[1];
 $dirName = str_replace("-", "_", $decode->slug);
 $fileName = $dirName . "." . $langExt;
 $rank = abs($decode->rank->id);
+$url = $decode->url;
 
 $rankPath = "/home/david/sei/coding_challanges/code_challenges/code_wars/" . $rank . "kyu";
 
@@ -55,12 +56,20 @@ if (!is_file($rankPath . DS . $dirName . DS . $fileName)) {
     echo '"' . $fileName . '" already exists at ' . $rankPath . DS . $dirName . "\n";
 }
 
-echo "Would you like to open this file?(y/n)\n";
+echo "Would you like to open this file in VScode?(y/n)\n";
 $handle = fopen('php://stdin', 'r');
 $line = fgets($handle);
 if (trim($line) == 'y') {
     echo "Opening...\n";
     exec('code ' . $rankPath . DS . $dirName  . DS . $fileName);
+}
+
+echo "Would you like to open challenge in Chrome?(y/n)\n";
+$handle = fopen('php://stdin', 'r');
+$line = fgets($handle);
+if (trim($line) == 'y') {
+    echo "Opening Chrome\n";
+    exec('google-chrome ' . $url);
 } else {
     echo "Exiting...\n";
 }
