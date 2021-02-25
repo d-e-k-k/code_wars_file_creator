@@ -5,7 +5,7 @@
 ![gif demo in terminal](./example.gif)
 
 ## Why I made this?
-I do coding challenges and like to keep track of all the completed challenges on my local machine. For every challenge, I need to check if I have done it and if not, make folders and files for it. This php script handles that for me.
+I do coding challenges and like to keep track of all the completed challenges on my local machine. For every challenge, I need to check if I have done it and if not, make folders and files for it, then open it in VScode and open the challenge in the browser. This php script handles that for me.
 
 ## How it works
 This script works by making a GET request to the challenge route of the [code wars restAPI](https://dev.codewars.com/#get-code-challenge). The end route is
